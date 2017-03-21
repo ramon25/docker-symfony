@@ -10,7 +10,7 @@ services:
             MYSQL_USER: symfony
             MYSQL_PASSWORD: symfony
     php:
-        image: php:fpm
+        image: php:7.0-fpm
         ports:
             - "9000:9000"
         volumes:
@@ -19,7 +19,7 @@ services:
         links:
             - db
     nginx:
-        build: ./nginx
+        image: nginx
         ports:
             - "8080:80"
         links:
@@ -27,4 +27,5 @@ services:
         volumes_from:
             - php
         volumes:
+            - ./symfony.conf:/etc/nginx/conf.d/symfony.conf
             - ./logs/nginx/:/var/log/nginx
