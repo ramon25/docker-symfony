@@ -1,3 +1,4 @@
 symfony
 logs
 .idea
+.env

@@ -13,4 +13,4 @@ Use 'docker-compose exec php' to run commands in container.
 
 **Example:**
 
-`docker-compose exec php php app/console c:c`
+`docker-compose exec php php /var/www/symfony/app/console c:c`
